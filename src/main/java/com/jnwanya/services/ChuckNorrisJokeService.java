@@ -2,6 +2,7 @@ package com.jnwanya.services;
 
 
 import org.springframework.stereotype.Service;
+import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 
 /**
  * Created by Jnwanya on
@@ -9,9 +10,16 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ChuckNorrisJokeService implements JokeService {
+
+    private final ChuckNorrisQuotes chuckNorrisQuotes;
+    public ChuckNorrisJokeService() {
+        chuckNorrisQuotes = new ChuckNorrisQuotes();
+    }
+
     @Override
     public String getRandomQuote() {
-        //return guru.springframework.norris.chuck.ChuckNorrisQuotes.getRandomQuote();
-        return "This is a chucknorris jokes";
+
+        //return "This is a chucknorris jokes";
+        return chuckNorrisQuotes.getRandomQuote();
     }
 }
