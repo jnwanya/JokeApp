@@ -12,8 +12,9 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 public class ChuckNorrisJokeService implements JokeService {
 
     private final ChuckNorrisQuotes chuckNorrisQuotes;
-    public ChuckNorrisJokeService() {
-        chuckNorrisQuotes = new ChuckNorrisQuotes();
+
+    public ChuckNorrisJokeService(ChuckNorrisQuotes chuckNorrisQuotes) {
+        this.chuckNorrisQuotes = chuckNorrisQuotes;
     }
 
     @Override
